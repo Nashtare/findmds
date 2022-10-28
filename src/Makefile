@@ -9,17 +9,17 @@ all: boost_1_64_0 tbb-2017_U7 find_mds
 
 boost_1_64_0:
 	echo -e "\e[31;1mDownloading and unpacking Boost 1.64.\nThis will take a few minutes...\e[0m"
-	wget -c https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.bz2
+	wget -c https://boostorg.jfrog.io/artifactory/main/release/1.64.0/source/boost_1_64_0.tar.bz2
 	tar xf boost_1_64_0.tar.bz2
 
 tbb-2017_U7:
 	echo -e "\e[31;1mDownloading and compiling TBB 2017_U7.\nThis will take a few minutes...\e[0m"
 	wget -c https://github.com/01org/tbb/archive/2017_U7.tar.gz
 	tar xf 2017_U7.tar.gz
-	patch -d tbb-2017_U7 -p1 < TBB_increase_memory.patch
-	make -C tbb-2017_U7 work_dir=build/linux MAKE="make RTM_KEY=''" # Old 'as' on cluster doesn't support rtm
+	patch -d oneTBB-2017_U7 -p1 < TBB_increase_memory.patch
+	make -C oneTBB-2017_U7 work_dir=build/linux MAKE="make RTM_KEY=''" # Old 'as' on cluster doesn't support rtm
 
 clean:
-	rm -fr tbb-2017_U7 boost_1_64_0 find_mds
+	rm -fr oneTBB-2017_U7 boost_1_64_0 find_mds
 
 .PHONY: all clean
