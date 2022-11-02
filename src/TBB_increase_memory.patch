@@ -6,7 +6,7 @@ diff -u -r tbb-2017_U7.orig/src/tbbmalloc/backref.cpp tbb-2017_U7/src/tbbmalloc/
   * The master array of 8KB holds 2K pointers to leaves, so ~128 GB can addressed.
   */
 -    static const size_t bytes = sizeof(uintptr_t)>4? 256*1024 : 8*1024;
-+    static const size_t bytes = 1024*1024; // Increase up to 4TB?
++    static const size_t bytes = 2048*2048;
      static const int dataSz;
  /* space is reserved for master table and 4 leaves
     taking into account VirtualAlloc allocation granularity */
