@@ -58,7 +58,7 @@
 #define COMPUTE_ID_FIRST
 #define PRINT_ALL_MDS
 
-#define SLEEP_TIME 30
+#define SLEEP_TIME 60
 
 /***********************************************************************
  *                       END CONFIGURATION                             *
