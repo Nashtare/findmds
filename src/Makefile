@@ -17,7 +17,7 @@ tbb-2021_7_0:
 	wget -c https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.7.0.tar.gz
 	tar xf v2021.7.0.tar.gz
 	patch -d oneTBB-2021.7.0 -p1 < TBB_increase_memory.patch
-	cd oneTBB-2021.7.0 && mkdir build && cd build && cmake .. && cmake --build . -j && cmake --install .
+	cd oneTBB-2021.7.0 && mkdir -p build && cd build && cmake .. && cmake --build . -j && cmake --install .
 
 clean:
 	rm -fr oneTBB-2021.7.0 boost_1_64_0 find_mds
