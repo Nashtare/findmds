@@ -1,8 +1,8 @@
 CXXFLAGS= -Wall -Wextra -I boost_1_64_0 -march=native -std=gnu++0x -O3 -g -fopenmp -gstabs+ -g3
 #CXXFLAGS+= -fsanitize=address
-CXXFLAGS+= -I src/oneTBB-2021.7.0/include -L src/oneTBB-2021.7.0/build/linux_release/
+CXXFLAGS+= -I oneTBB-2021.7.0/include -L oneTBB-2021.7.0/build/gnu_9.4_cxx11_64_relwithdebinfo/
 LDLIBS=-ltbb
-LDFLAGS=-Wl,-rpath=src/oneTBB-2021.7.0/build/linux_release/
+LDFLAGS=-Wl,-rpath=oneTBB-2021.7.0/build/gnu_9.4_cxx11_64_relwithdebinfo/
 
 
 all: boost_1_64_0 tbb-2021_7_0 find_mds
